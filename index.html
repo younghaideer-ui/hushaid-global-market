@@ -1,392 +1,281 @@
-<!DOCTYPE html><html lang="en">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HUSHAID Global Market connects buyers, sellers, businesses, and property opportunities around the world.">
-  <title>HUSHAID GLOBAL MARKET</title>  <style>
-    :root {
-      --navy: #071b3a;
-      --blue: #123b70;
-      --gold: #d8ad45;
-      --white: #ffffff;
-      --light: #f4f7fb;
-      --text: #273449;
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="HUSHAID GLOBAL MARKET — Connecting Markets. Empowering the World.">
+<title>HUSHAID GLOBAL MARKET</title>
+<style>
+:root{--n:#071629;--b:#153454;--g:#e7b84b;--p:#f4f6fa}
+*{box-sizing:border-box}
+body{margin:0;font:16px Arial,sans-serif;background:var(--p);color:#17253a;line-height:1.5}
+header{background:var(--n);color:white;padding:16px 5%;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{font-weight:900;letter-spacing:1px}
+.brand span,h1 span{color:var(--g)}
+nav{display:flex;gap:14px}
+nav a{color:white;text-decoration:none;font-size:14px}
+button,.btn{border:0;border-radius:8px;padding:11px 15px;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block}
+.gold{background:var(--g);color:#152238}
+.dark{background:var(--b);color:white}
+.outline{background:transparent;color:white;border:1px solid #8291a5}
+.hero{background:linear-gradient(120deg,var(--n),#1b4269);color:white;padding:60px 5%}
+.inner,.wrap{max-width:1080px;margin:auto}
+.eyebrow{color:var(--g);text-transform:uppercase;letter-spacing:2px;font-weight:bold;font-size:12px}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.1;margin:14px 0;max-width:760px}
+.hero p{color:#d5dfeb;max-width:620px;font-size:17px}
+.actions,.tools{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
+.wrap{padding:34px 5%}
+h2{margin:0 0 8px;color:var(--n)}
+.muted{color:#68768a}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:20px}
+.card,.product{background:white;border:1px solid #e2e8f0;border-radius:13px;padding:20px;box-shadow:0 4px 15px #0716290a}
+.icon{font-size:30px}
+.card strong{display:block;font-size:18px;margin:8px 0}
+.tools input{flex:1;min-width:170px}
+.tools input,.tools select,input,select{padding:11px;border:1px solid #d4dce7;border-radius:8px;font:inherit;width:100%;background:white}
+.tools select{width:auto}
+.picture{height:120px;background:#edf1f7;border-radius:9px;display:grid;place-items:center;font-size:44px;margin-bottom:12px}
+.tag{background:#fff3d0;color:#72520b;border-radius:20px;padding:4px 8px;font-size:12px}
+.price{font-size:21px;font-weight:bold;color:#91680c}
+.product-actions{display:flex;gap:8px;margin-top:12px}
+.product-actions button{flex:1}
+.banner{background:#e7edf5;padding:24px;border-radius:13px;margin-top:26px}
+.dashboard{display:none}
+footer{background:var(--n);color:#d5dfeb;text-align:center;padding:28px}
+footer strong{color:var(--g)}
+.modal{display:none;position:fixed;inset:0;background:#071629bb;z-index:5;overflow:auto;padding:20px}
+.box{background:white;border-radius:13px;padding:23px;max-width:450px;margin:4vh auto}
+.close{float:right;background:#e9edf2}
+.row{margin:12px 0}
+.row label{display:block;font-size:13px;font-weight:bold;margin-bottom:5px}
+.notice{font-size:12px;background:#eff2f6;color:#59677b;padding:10px;border-radius:8px}
+.empty{padding:20px;color:#68768a}
+@media(max-width:600px){header{padding:14px 4%}nav{gap:9px}.hero{padding:42px 5%}.wrap{padding:27px 5%}}
+</style>
+</head>
+<body>
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: var(--light);
-      color: var(--text);
-      line-height: 1.6;
-    }
-
-    header {
-      background: var(--navy);
-      color: var(--white);
-      padding: 18px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 14px;
-    }
-
-    .logo {
-      font-size: 21px;
-      font-weight: bold;
-    }
-
-    .logo span {
-      color: var(--gold);
-    }
-
-    nav {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: var(--gold);
-    }
-
-    .hero {
-      background: linear-gradient(135deg, #071b3a, #16477d);
-      color: white;
-      padding: 65px 6%;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: clamp(30px, 6vw, 48px);
-      line-height: 1.2;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 span {
-      color: var(--gold);
-    }
-
-    .hero p {
-      max-width: 650px;
-      margin: 0 auto 25px;
-      color: #e1e8f3;
-    }
-
-    .search {
-      display: flex;
-      max-width: 620px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-
-    .search input {
-      flex: 1;
-      min-width: 0;
-      padding: 15px;
-      border: none;
-      outline: none;
-      font-size: 15px;
-    }
-
-    .search button,
-    .gold-button {
-      background: var(--gold);
-      color: var(--navy);
-      border: none;
-      padding: 14px 20px;
-      font-weight: bold;
-      cursor: pointer;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-
-    .section {
-      padding: 45px 6%;
-    }
-
-    .section h2 {
-      color: var(--navy);
-      font-size: 27px;
-      margin-bottom: 8px;
-    }
-
-    .subtitle {
-      color: #657184;
-      margin-bottom: 25px;
-    }
-
-    .categories,
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
-      gap: 17px;
-    }
-
-    .category,
-    .card {
-      background: white;
-      padding: 22px 16px;
-      border-radius: 10px;
-      border: 1px solid #e3e8ef;
-      box-shadow: 0 4px 14px #071b3a0b;
-    }
-
-    .category {
-      text-align: center;
-      text-decoration: none;
-      color: var(--navy);
-      font-weight: bold;
-    }
-
-    .category .icon {
-      display: block;
-      font-size: 32px;
-      margin-bottom: 8px;
-    }
-
-    .category:hover {
-      border-color: var(--gold);
-      transform: translateY(-2px);
-    }
-
-    .card h3 {
-      color: var(--navy);
-      margin: 10px 0;
-    }
-
-    .card p {
-      font-size: 14px;
-      color: #657184;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #fff2cc;
-      color: #78580c;
-      padding: 4px 9px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: bold;
-    }
-
-    .cta {
-      background: var(--navy);
-      color: white;
-      text-align: center;
-      padding: 45px 6%;
-    }
-
-    .cta h2 {
-      font-size: 28px;
-      margin-bottom: 12px;
-    }
-
-    .cta p {
-      margin-bottom: 22px;
-      color: #dce5f1;
-    }
-
-    footer {
-      background: #041127;
-      color: #dce5f1;
-      padding: 25px 6%;
-      text-align: center;
-      font-size: 13px;
-    }
-
-    footer strong {
-      color: var(--gold);
-    }
-
-    @media (max-width: 600px) {
-      header {
-        justify-content: center;
-      }
-
-      nav {
-        justify-content: center;
-        gap: 12px;
-      }
-
-      .hero {
-        padding: 48px 5%;
-      }
-
-      .search button {
-        padding: 12px;
-      }
-
-      .section {
-        padding: 35px 5%;
-      }
-    }
-  </style></head><body>  <header>
-    <div class="logo">HUSHAID <span>GLOBAL MARKET</span></div><nav>
-  <a href="#home">Home</a>
-  <a href="#categories">Categories</a>
-  <a href="#business">Businesses</a>
-  <a href="#property">Real Estate</a>
+<header>
+<div class="brand">HUSHAID <span>GLOBAL MARKET</span></div>
+<nav>
+<a href="#home">Home</a>
+<a href="#market">Marketplace</a>
+<a href="#services">Services</a>
 </nav>
+<div id="auth">
+<button class="outline" onclick="modal('login')">Login</button>
+<button class="gold" onclick="modal('signup')">Sign Up</button>
+</div>
+<div id="usernav" style="display:none">
+<button class="outline" onclick="dashboard()">Dashboard</button>
+<button class="gold" onclick="logout()">Log out</button>
+</div>
+</header>
 
-  </header>  <main>
-    <section class="hero" id="home">
-      <h1>One World. <span>One Marketplace.</span></h1>  <p>
-    Discover products, connect with businesses, explore properties,
-    and find opportunities in one global marketplace.
-  </p>
-
-  <form class="search" id="searchForm">
-    <input
-      type="search"
-      id="searchInput"
-      placeholder="Search products, businesses or properties..."
-      aria-label="Search marketplace"
-    >
-    <button type="submit">Search</button>
-  </form>
+<section class="hero" id="home">
+<div class="inner">
+<div class="eyebrow">One marketplace. Many opportunities.</div>
+<h1>Connecting Markets.<br><span>Empowering the World.</span></h1>
+<p>Discover products, connect with businesses, and explore opportunities in one growing marketplace built to bring buyers and sellers closer together.</p>
+<div class="actions">
+<a class="btn gold" href="#market">Explore Marketplace</a>
+<button class="outline" onclick="modal('signup')">Start Selling</button>
+</div>
+</div>
 </section>
 
-<section class="section" id="categories">
-  <h2>Explore Our Marketplace</h2>
-  <p class="subtitle">Discover what you need in one place.</p>
-
-  <div class="categories">
-    <a class="category" href="#products">
-      <span class="icon">🛒</span>
-      Products
-    </a>
-
-    <a class="category" href="#property">
-      <span class="icon">🏠</span>
-      Real Estate
-    </a>
-
-    <a class="category" href="#investment">
-      <span class="icon">📈</span>
-      Investment
-    </a>
-
-    <a class="category" href="#business">
-      <span class="icon">🏢</span>
-      Businesses
-    </a>
-
-    <a class="category" href="#logistics">
-      <span class="icon">🚚</span>
-      Logistics
-    </a>
-  </div>
+<section class="wrap" id="services">
+<h2>Explore Our Marketplace</h2>
+<p class="muted">Discover goods, services and business connections.</p>
+<div class="grid">
+<div class="card"><div class="icon">🛍️</div><strong>Products</strong><span class="muted">Browse products from sellers.</span></div>
+<div class="card"><div class="icon">🏢</div><strong>Real Estate</strong><span class="muted">Property listings are planned.</span></div>
+<div class="card"><div class="icon">🤝</div><strong>Business Directory</strong><span class="muted">Find businesses and connections.</span></div>
+<div class="card"><div class="icon">🚚</div><strong>Logistics</strong><span class="muted">Delivery tools are planned.</span></div>
+</div>
 </section>
 
-<section class="section" id="products">
-  <h2>Featured Products</h2>
-  <p class="subtitle">A preview of products on our marketplace.</p>
-
-  <div class="cards">
-    <article class="card searchable">
-      <span class="badge">Products</span>
-      <h3>Food & Groceries</h3>
-      <p>Explore everyday essentials from businesses and suppliers.</p>
-    </article>
-
-    <article class="card searchable">
-      <span class="badge">Building</span>
-      <h3>Building Materials</h3>
-      <p>Discover cement and other construction materials.</p>
-    </article>
-
-    <article class="card searchable">
-      <span class="badge">Electronics</span>
-      <h3>Phones & Electronics</h3>
-      <p>Find electronics offered by marketplace sellers.</p>
-    </article>
-  </div>
+<section class="wrap" id="market">
+<h2>Featured Products</h2>
+<p class="muted">Sample listings for demonstration only.</p>
+<div class="tools">
+<input id="q" placeholder="Search products..." oninput="render()">
+<select id="cat" onchange="render()">
+<option>All</option><option>Electronics</option><option>Fashion</option><option>Home</option><option>Food</option>
+</select>
+</div>
+<div class="grid" id="products"></div>
+<div class="banner">
+<h2>Have products to sell?</h2>
+<p class="muted">Create a demo seller account to preview the experience.</p>
+<button class="dark" onclick="modal('signup')">Become a Seller</button>
+</div>
 </section>
 
-<section class="section" id="business">
-  <h2>Business Directory</h2>
-  <p class="subtitle">A place for businesses to showcase their services.</p>
-
-  <div class="cards">
-    <article class="card searchable">
-      <h3>Business Profiles</h3>
-      <p>Help customers discover your company and its products.</p>
-    </article>
-
-    <article class="card searchable" id="property">
-      <h3>Real Estate</h3>
-      <p>Explore opportunities to buy, sell, or rent properties.</p>
-    </article>
-
-    <article class="card searchable" id="investment">
-      <h3>Investment Opportunities</h3>
-      <p>Review business proposals, expected costs, and potential risks.</p>
-    </article>
-  </div>
+<section class="wrap dashboard" id="dash">
+<h2>My Dashboard</h2>
+<p id="welcome"></p>
+<div class="grid">
+<div class="card">
+<h3>Account details</h3>
+<p id="details"></p>
+<p class="notice">Demo only. Data is stored in this browser, not a secure account system.</p>
+</div>
+<div class="card">
+<h3>Seller tools</h3>
+<p class="muted">Seller or Buyer & Seller accounts can add sample listings.</p>
+<button class="gold" onclick="modal('listing')">Add product</button>
+<div id="mine"></div>
+</div>
+</div>
 </section>
 
-<section class="section" id="logistics">
-  <h2>Logistics & Delivery</h2>
-  <p class="subtitle">
-    Our future platform aims to connect buyers and sellers with delivery
-    partners and order tracking services.
-  </p>
-</section>
+<footer>
+<strong>HUSHAID GLOBAL MARKET</strong>
+<p>Connecting Markets. Empowering the World.</p>
+<small>© <span id="year"></span> HUSHAID GLOBAL MARKET · Prototype</small>
+</footer>
 
-<section class="cta">
-  <h2>Grow Your Business With HUSHAID</h2>
-  <p>Bring your products and business closer to the world.</p>
-  <a class="gold-button" href="mailto:hello@hushaidglobal.com">
-    Become a Seller
-  </a>
-</section>
+<div class="modal" id="signup">
+<div class="box">
+<button class="close" onclick="closeModal('signup')">Close ✕</button>
+<h2>Create a demo account</h2>
+<form onsubmit="signup(event)">
+<div class="row"><label>Full name</label><input id="sname" required maxlength="80"></div>
+<div class="row"><label>Email</label><input id="semail" type="email" required></div>
+<div class="row"><label>Account type</label><select id="role"><option>Buyer</option><option>Seller</option><option>Buyer & Seller</option></select></div>
+<div class="row"><label>Demo password</label><input id="spass" type="password" minlength="6" required></div>
+<p class="notice">Prototype only. Do not use a real or reused password. This is not secure authentication.</p>
+<button class="gold" style="width:100%">Create demo account</button>
+</form>
+<p>Already registered? <a href="#" onclick="switchM('signup','login')">Login</a></p>
+</div>
+</div>
 
-  </main>  <footer>
-    <p><strong>HUSHAID GLOBAL MARKET</strong></p>
-    <p>Connecting Markets. Empowering the World.</p>
-    <p>&copy; 2026 HUSHAID GLOBAL MARKET. Prototype version.</p>
-  </footer>  <script>
-    const searchForm = document.getElementById("searchForm");
-    const searchInput = document.getElementById("searchInput");
-    const cards = document.querySelectorAll(".searchable");
+<div class="modal" id="login">
+<div class="box">
+<button class="close" onclick="closeModal('login')">Close ✕</button>
+<h2>Login</h2>
+<form onsubmit="login(event)">
+<div class="row"><label>Email</label><input id="lemail" type="email" required></div>
+<div class="row"><label>Demo password</label><input id="lpass" type="password" required></div>
+<p class="notice">Demo only. Never enter a password you use elsewhere.</p>
+<button class="gold" style="width:100%">Login</button>
+</form>
+<p>New here? <a href="#" onclick="switchM('login','signup')">Sign up</a></p>
+</div>
+</div>
 
-    searchForm.addEventListener("submit", function (event) {
-      event.preventDefault();
+<div class="modal" id="listing">
+<div class="box">
+<button class="close" onclick="closeModal('listing')">Close ✕</button>
+<h2>Add demo product</h2>
+<form onsubmit="addListing(event)">
+<div class="row"><label>Product name</label><input id="pname" required maxlength="80"></div>
+<div class="row"><label>Price (₦)</label><input id="price" type="number" min="1" required></div>
+<div class="row"><label>Category</label><select id="pcat"><option>Electronics</option><option>Fashion</option><option>Home</option><option>Food</option></select></div>
+<button class="gold" style="width:100%">Add sample listing</button>
+</form>
+</div>
+</div>
 
-      const query = searchInput.value.trim().toLowerCase();
-      let found = 0;
+<script>
+const productsData=[
+{name:"Wireless Headphones",price:18500,cat:"Electronics",icon:"🎧"},
+{name:"Classic Wristwatch",price:12000,cat:"Fashion",icon:"⌚"},
+{name:"Home Storage Set",price:9500,cat:"Home",icon:"🏠"},
+{name:"Gift & Snack Box",price:7500,cat:"Food",icon:"🎁"},
+{name:"Phone Accessory Kit",price:6500,cat:"Electronics",icon:"📱"},
+{name:"Everyday Backpack",price:14000,cat:"Fashion",icon:"🎒"}
+];
+let user=null;
 
-      cards.forEach(function (card) {
-        const matches = card.textContent.toLowerCase().includes(query);
-        card.style.display = matches || query === "" ? "" : "none";
+function esc(s){
+return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))
+}
+function money(n){return "₦"+Number(n).toLocaleString("en-NG")}
 
-        if (matches && query !== "") found++;
-      });
+function render(){
+let q=document.getElementById("q").value.toLowerCase();
+let c=document.getElementById("cat").value;
+let arr=productsData.filter(p=>p.name.toLowerCase().includes(q)&&(c==="All"||p.cat===c));
+let out=document.getElementById("products");
+out.innerHTML="";
+if(!arr.length){out.innerHTML='<div class="empty">No products found.</div>';return}
+arr.forEach(p=>{
+let d=document.createElement("article");
+d.className="product";
+d.innerHTML='<div class="picture">'+p.icon+'</div><span class="tag">'+esc(p.cat)+'</span><h3>'+esc(p.name)+'</h3><div class="price">'+money(p.price)+'</div><p class="muted">Sample listing</p><div class="product-actions"><button class="dark" onclick="enquire()">Enquire</button><button class="gold" onclick="cart()">Add to cart</button></div>';
+out.appendChild(d)
+})
+}
 
-      if (query === "") {
-        alert("Enter a product, business, or property to search.");
-      } else if (found === 0) {
-        alert("No matching demo results found. Try another search.");
-      } else {
-        document.getElementById("products").scrollIntoView({
-          behavior: "smooth"
-        });
-      }
-    });
-  </script></body>
+function modal(id){document.getElementById(id).style.display="block"}
+function closeModal(id){document.getElementById(id).style.display="none"}
+function switchM(a,b){closeModal(a);modal(b)}
+
+function signup(e){
+e.preventDefault();
+let email=document.getElementById("semail").value.trim().toLowerCase();
+let u={name:document.getElementById("sname").value.trim(),email,role:document.getElementById("role").value,pass:document.getElementById("spass").value};
+if(localStorage.getItem("hgm:"+email)){alert("Demo account already exists in this browser. Please log in.");return}
+localStorage.setItem("hgm:"+email,JSON.stringify(u));
+user=u;closeModal("signup");update();dashboard();
+alert("Demo account created in this browser only.")
+}
+
+function login(e){
+e.preventDefault();
+let email=document.getElementById("lemail").value.trim().toLowerCase(),u;
+try{u=JSON.parse(localStorage.getItem("hgm:"+email)||"null")}catch{}
+if(!u||u.pass!==document.getElementById("lpass").value){alert("No matching demo account found in this browser.");return}
+user=u;closeModal("login");update();dashboard()
+}
+
+function update(){
+document.getElementById("auth").style.display=user?"none":"block";
+document.getElementById("usernav").style.display=user?"block":"none";
+if(user){
+document.getElementById("welcome").textContent="Welcome, "+user.name+".";
+document.getElementById("details").textContent="Name: "+user.name+" | Email: "+user.email+" | Role: "+user.role
+}
+}
+
+function dashboard(){
+if(!user){modal("login");return}
+document.getElementById("dash").style.display="block";
+document.getElementById("dash").scrollIntoView({behavior:"smooth"});
+showMine()
+}
+
+function logout(){
+user=null;update();document.getElementById("dash").style.display="none";scrollTo(0,0)
+}
+
+function addListing(e){
+e.preventDefault();
+if(!user||!["Seller","Buyer & Seller"].includes(user.role)){alert("Please use a Seller or Buyer & Seller demo account.");return}
+let p={name:document.getElementById("pname").value.trim(),price:Number(document.getElementById("price").value),cat:document.getElementById("pcat").value,icon:"📦",owner:user.email};
+productsData.push(p);
+let all=JSON.parse(localStorage.getItem("hgm:products")||"[]");
+all.push(p);localStorage.setItem("hgm:products",JSON.stringify(all));
+closeModal("listing");render();showMine();e.target.reset();alert("Demo listing added in this browser.")
+}
+
+function showMine(){
+let saved=JSON.parse(localStorage.getItem("hgm:products")||"[]");
+let mine=saved.filter(p=>p.owner===user.email);
+document.getElementById("mine").innerHTML=mine.length?mine.map(p=>"<p>"+esc(p.name)+" — "+money(p.price)+"</p>").join(""):"<p class='muted'>No listings yet.</p>"
+}
+
+function enquire(){alert("Seller messaging is not connected in this prototype.")}
+function cart(){alert("Cart checkout and payment are not available in this prototype.")}
+window.addEventListener("click",e=>{if(e.target.classList.contains("modal"))e.target.style.display="none"});
+(function(){
+document.getElementById("year").textContent=new Date().getFullYear();
+try{productsData.push(...JSON.parse(localStorage.getItem("hgm:products")||"[]"))}catch{}
+render();update()
+})();
+</script>
+</body>
 </html>
