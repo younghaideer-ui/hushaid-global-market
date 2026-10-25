@@ -277,5 +277,17 @@ try{productsData.push(...JSON.parse(localStorage.getItem("hgm:products")||"[]"))
 render();update()
 })();
 </script>
-</body>
+</body><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+const SUPABASE_URL = "https://iozizauijosrjdoldzkc.supabase.co/rest/v1/";
+const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_O1Y-_d_s503Eh099-ivTsw_oaKdGdAX";
+
+const supabaseClient = window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
+
+console.log("Supabase setup loaded successfully.");
+</script>
 </html>
