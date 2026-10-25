@@ -1,0 +1,392 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="HUSHAID Global Market connects buyers, sellers, businesses, and property opportunities around the world.">
+  <title>HUSHAID GLOBAL MARKET</title>  <style>
+    :root {
+      --navy: #071b3a;
+      --blue: #123b70;
+      --gold: #d8ad45;
+      --white: #ffffff;
+      --light: #f4f7fb;
+      --text: #273449;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--navy);
+      color: var(--white);
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #071b3a, #16477d);
+      color: white;
+      padding: 65px 6%;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 6vw, 48px);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+      color: #e1e8f3;
+    }
+
+    .search {
+      display: flex;
+      max-width: 620px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .search input {
+      flex: 1;
+      min-width: 0;
+      padding: 15px;
+      border: none;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .search button,
+    .gold-button {
+      background: var(--gold);
+      color: var(--navy);
+      border: none;
+      padding: 14px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .section {
+      padding: 45px 6%;
+    }
+
+    .section h2 {
+      color: var(--navy);
+      font-size: 27px;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #657184;
+      margin-bottom: 25px;
+    }
+
+    .categories,
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+      gap: 17px;
+    }
+
+    .category,
+    .card {
+      background: white;
+      padding: 22px 16px;
+      border-radius: 10px;
+      border: 1px solid #e3e8ef;
+      box-shadow: 0 4px 14px #071b3a0b;
+    }
+
+    .category {
+      text-align: center;
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: bold;
+    }
+
+    .category .icon {
+      display: block;
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .category:hover {
+      border-color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .card h3 {
+      color: var(--navy);
+      margin: 10px 0;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #657184;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #fff2cc;
+      color: #78580c;
+      padding: 4px 9px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .cta {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+      padding: 45px 6%;
+    }
+
+    .cta h2 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      margin-bottom: 22px;
+      color: #dce5f1;
+    }
+
+    footer {
+      background: #041127;
+      color: #dce5f1;
+      padding: 25px 6%;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: var(--gold);
+    }
+
+    @media (max-width: 600px) {
+      header {
+        justify-content: center;
+      }
+
+      nav {
+        justify-content: center;
+        gap: 12px;
+      }
+
+      .hero {
+        padding: 48px 5%;
+      }
+
+      .search button {
+        padding: 12px;
+      }
+
+      .section {
+        padding: 35px 5%;
+      }
+    }
+  </style></head><body>  <header>
+    <div class="logo">HUSHAID <span>GLOBAL MARKET</span></div><nav>
+  <a href="#home">Home</a>
+  <a href="#categories">Categories</a>
+  <a href="#business">Businesses</a>
+  <a href="#property">Real Estate</a>
+</nav>
+
+  </header>  <main>
+    <section class="hero" id="home">
+      <h1>One World. <span>One Marketplace.</span></h1>  <p>
+    Discover products, connect with businesses, explore properties,
+    and find opportunities in one global marketplace.
+  </p>
+
+  <form class="search" id="searchForm">
+    <input
+      type="search"
+      id="searchInput"
+      placeholder="Search products, businesses or properties..."
+      aria-label="Search marketplace"
+    >
+    <button type="submit">Search</button>
+  </form>
+</section>
+
+<section class="section" id="categories">
+  <h2>Explore Our Marketplace</h2>
+  <p class="subtitle">Discover what you need in one place.</p>
+
+  <div class="categories">
+    <a class="category" href="#products">
+      <span class="icon">🛒</span>
+      Products
+    </a>
+
+    <a class="category" href="#property">
+      <span class="icon">🏠</span>
+      Real Estate
+    </a>
+
+    <a class="category" href="#investment">
+      <span class="icon">📈</span>
+      Investment
+    </a>
+
+    <a class="category" href="#business">
+      <span class="icon">🏢</span>
+      Businesses
+    </a>
+
+    <a class="category" href="#logistics">
+      <span class="icon">🚚</span>
+      Logistics
+    </a>
+  </div>
+</section>
+
+<section class="section" id="products">
+  <h2>Featured Products</h2>
+  <p class="subtitle">A preview of products on our marketplace.</p>
+
+  <div class="cards">
+    <article class="card searchable">
+      <span class="badge">Products</span>
+      <h3>Food & Groceries</h3>
+      <p>Explore everyday essentials from businesses and suppliers.</p>
+    </article>
+
+    <article class="card searchable">
+      <span class="badge">Building</span>
+      <h3>Building Materials</h3>
+      <p>Discover cement and other construction materials.</p>
+    </article>
+
+    <article class="card searchable">
+      <span class="badge">Electronics</span>
+      <h3>Phones & Electronics</h3>
+      <p>Find electronics offered by marketplace sellers.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="business">
+  <h2>Business Directory</h2>
+  <p class="subtitle">A place for businesses to showcase their services.</p>
+
+  <div class="cards">
+    <article class="card searchable">
+      <h3>Business Profiles</h3>
+      <p>Help customers discover your company and its products.</p>
+    </article>
+
+    <article class="card searchable" id="property">
+      <h3>Real Estate</h3>
+      <p>Explore opportunities to buy, sell, or rent properties.</p>
+    </article>
+
+    <article class="card searchable" id="investment">
+      <h3>Investment Opportunities</h3>
+      <p>Review business proposals, expected costs, and potential risks.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="logistics">
+  <h2>Logistics & Delivery</h2>
+  <p class="subtitle">
+    Our future platform aims to connect buyers and sellers with delivery
+    partners and order tracking services.
+  </p>
+</section>
+
+<section class="cta">
+  <h2>Grow Your Business With HUSHAID</h2>
+  <p>Bring your products and business closer to the world.</p>
+  <a class="gold-button" href="mailto:hello@hushaidglobal.com">
+    Become a Seller
+  </a>
+</section>
+
+  </main>  <footer>
+    <p><strong>HUSHAID GLOBAL MARKET</strong></p>
+    <p>Connecting Markets. Empowering the World.</p>
+    <p>&copy; 2026 HUSHAID GLOBAL MARKET. Prototype version.</p>
+  </footer>  <script>
+    const searchForm = document.getElementById("searchForm");
+    const searchInput = document.getElementById("searchInput");
+    const cards = document.querySelectorAll(".searchable");
+
+    searchForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const query = searchInput.value.trim().toLowerCase();
+      let found = 0;
+
+      cards.forEach(function (card) {
+        const matches = card.textContent.toLowerCase().includes(query);
+        card.style.display = matches || query === "" ? "" : "none";
+
+        if (matches && query !== "") found++;
+      });
+
+      if (query === "") {
+        alert("Enter a product, business, or property to search.");
+      } else if (found === 0) {
+        alert("No matching demo results found. Try another search.");
+      } else {
+        document.getElementById("products").scrollIntoView({
+          behavior: "smooth"
+        });
+      }
+    });
+  </script></body>
+</html>
